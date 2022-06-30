@@ -13,6 +13,8 @@ const StyledBox = styled (Box)({
     flexWrap:'wrap',
 });
 
+
+
 const Home = () =>{
     const [questions,setQuestions] = useContext(QuestionContext);
     return (
@@ -21,6 +23,8 @@ const Home = () =>{
                 return <TList title = {value.question} categoryId = {0}/>
             })}
         </StyledBox>
+        
+        
     )
 }
 

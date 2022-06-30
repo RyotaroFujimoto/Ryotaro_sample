@@ -17,7 +17,8 @@ const StyledPaper = styled(Paper)({
     flexDirection: 'column',
     alignItems: 'center',
     padding: '200px',
-    
+    marginRight: 'auto',
+    marginLeft: 'auto',
   });
   
 const StyledAvatar = styled(Avatar)({
@@ -56,7 +57,7 @@ const Register = () => {
         質問の登録
       </Typography>
       <form className="question_entry-form" noValidate>
-        <TextField variant="outlined" margin="normal" id="question" label="質問詳細" name = "question" onChange={handleQuestionChange} />
+        <TextField variant="outlined" margin="normal" id="question" label="質問内容" name = "question" onChange={handleQuestionChange} />
         <div className="question_entry-buttons">
           <StyledButton variant="outlined" color="primary" onClick={handleReturnClick}>
             キャンセル

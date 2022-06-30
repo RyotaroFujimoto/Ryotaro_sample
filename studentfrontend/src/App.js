@@ -35,8 +35,8 @@ const LoginButton = () => {
     navigate('/Register');
   };
   return (
-    <Button onClick={Register} color="inherit">
-      Login
+    <Button onClick={Register} color="inherit" variant="contained">
+      質問を追加
     </Button>
   );
 };
@@ -52,7 +52,7 @@ function App() {
         <BrowserRouter>
           <div className="App">
             <Appbar/>
-            <h1>質問数: {taskCards.length}</h1>
+            <h1>質問数: {questions.length}</h1>
             <LoginButton />
           </div>
           <Routes>
