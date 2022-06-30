@@ -18,17 +18,10 @@ import Register from "./components/Register";
 import { useState } from 'react';
 import { Button } from "@mui/material";
 import { Icon } from "@mui/material";
-
-
-const StyledBox = styled(Box)({
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-  });
+import Home from "./components/Home";
 
 export const TaskCardsContext = React.createContext();
 export const QuestionContext = React.createContext();
-
 
 const questionList = [
   { id: 1,  question: "議事録の取り方がわかりません"  },
@@ -49,7 +42,6 @@ const LoginButton = () => {
 };
 
 
-
 function App() {
   const [questions,setQuestions] = useState(questionList);
   const count = useSelector((state) => state.count);
@@ -61,26 +53,12 @@ function App() {
           <div className="App">
             <Appbar/>
             <h1>質問数: {taskCards.length}</h1>
-            <StyledBox>
-              <TList title="議事録の取り方がわかりません" categoryId={0} />
-              <TList title="Slackの使い方がわかりません" categoryId={1} />
-              <TList title="転職の仕方がわかりません" categoryId={2} />
-              <TList title="転職の仕方がわかりません" categoryId={3} />
-              <TList title="転職の仕方がわかりません" categoryId={4} />
-              <TList title="転職の仕方がわかりません" categoryId={5} />
-              <TList title="転職の仕方がわかりません" categoryId={6} />
-              <TList title="転職の仕方がわかりません" categoryId={7} />
-              <TList title="転職の仕方がわかりません" categoryId={8} />
-              <TList title="転職の仕方がわかりません" categoryId={9} />
-              <TList title="転職の仕方がわかりません" categoryId={10} />
-            </StyledBox> 
             <LoginButton />
           </div>
-
           <Routes>
+            <Route exact path="/" element={<Home />} />
             <Route path="/Register" element={<Register />} />
           </Routes>
-
         </BrowserRouter>
       </TaskCardsContext.Provider>
     </QuestionContext.Provider>

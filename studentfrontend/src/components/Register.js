@@ -11,14 +11,13 @@ import Icon from '@mui/material/Icon';
 import { styled } from '@mui/system';
 import { QuestionContext } from '../App';
 
-
-
 const StyledPaper = styled(Paper)({
     width: '400px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: '20px',
+    padding: '200px',
+    
   });
   
 const StyledAvatar = styled(Avatar)({
@@ -28,9 +27,6 @@ backgroundColor: '#EE0290',
 const StyledButton = styled(Button)({
 margin: '5px',
 });
-
-
-
 
 const Register = () => {
     const [questions,setQuestions] = useContext(QuestionContext);
@@ -46,12 +42,13 @@ const Register = () => {
         setQuestions([...questions, newQuestion]);
         // 質問一覧へ遷移
         navigate('/');
-      };
+    }
     const handleReturnClick = () => {
     navigate('/');
-  }
+    }
   return(
     <div>
+     <StyledPaper>
       <StyledAvatar>
         <Icon>work</Icon>
       </StyledAvatar>
@@ -69,9 +66,9 @@ const Register = () => {
           </StyledButton>
         </div>
       </form>
+     </StyledPaper>
     </div>
-    
-    )
+  )
 }
 
 export default Register;
