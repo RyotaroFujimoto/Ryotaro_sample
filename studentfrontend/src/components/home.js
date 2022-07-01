@@ -4,9 +4,10 @@ import styled from "@emotion/styled";
 import { Box } from "@mui/system";
 import { QuestionContext } from "../App";
 import { useContext } from "react";
-import { Button } from "@mui/material";
+import { Button, Fab } from "@mui/material";
 import Appbar from "./Appbar";
 import { useNavigate } from "react-router-dom";
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 const StyledBox = styled (Box)({
     display:'flex',
@@ -14,15 +15,13 @@ const StyledBox = styled (Box)({
     flexWrap:'wrap',
 });
 
-const LoginButton = () => {
+const RegisterButton = () => {
     const navigate = useNavigate();
     const Register = () => {
       navigate('/Register');
     };
     return (
-      <Button onClick={Register} color="inherit" variant="contained">
-        質問を追加
-      </Button>
+      <AddCircleIcon sx={{ fontSize: 100 }} onClick={Register} color="inherit" variant="contained" />
     );
   };
   
@@ -30,14 +29,14 @@ const LoginButton = () => {
 const Home = () =>{
     const [questions,setQuestions] = useContext(QuestionContext);
     return (
-        <div className="App">
-        <LoginButton />
+        <div  class="App">
+        <h1 >質問数: {questions.length}</h1>
         <StyledBox>
             {questions.map((value) => {
                 return <TList title = {value.question} categoryId = {0}/>
             })}
-        <h1>質問数: {questions.length}</h1>
         </StyledBox>
+        <RegisterButton />
         </div>
     )
 }

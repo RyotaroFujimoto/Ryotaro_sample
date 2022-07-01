@@ -13,14 +13,12 @@ import { AppBar } from '@mui/material';
 
 
 const StyledPaper = styled(Paper)({
-    width: '400px',
+    width: 'auto',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: '200px',
-    marginRight: 'auto',
-    marginLeft: 'auto',
-    marginTop: '100px',
+    height: '100%',
+    padding: '421px',
   });
   
 const StyledAvatar = styled(Avatar)({
@@ -52,7 +50,7 @@ const Register = () => {
     }
 
   return(
-    <body className='register'>
+    <div>
       <AppBar/>
       <StyledPaper>
         <Typography component="h1" variant="h5">
@@ -70,7 +68,7 @@ const Register = () => {
           </div>
         </form>
       </StyledPaper>
-    </body>
+    </div>
   )
 }
 

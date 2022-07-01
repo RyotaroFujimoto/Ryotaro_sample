@@ -27,7 +27,6 @@ export const QuestionContext = React.createContext();
 export const AnswerContext = React.createContext();
 
 const questionList = [
-  { id: 1,  question: "議事録の取り方がわかりません"  },
 ]
 
 const answerList = [

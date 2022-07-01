@@ -25,6 +25,7 @@ export const TList = (props) => {
   const cardList = state[props.categoryId];
 
   return (
+    
     <StyledPaper>
       <h4>{props.title}</h4>
       {cardList.length ? (
