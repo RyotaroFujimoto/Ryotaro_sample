@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/system';
-import TCard from './TCard';
+import Answer from './Answer';
 
 // コンテキストのインポート
 import { TaskCardsContext } from '../App';
@@ -29,7 +29,7 @@ export const TList = (props) => {
       <h4>{props.title}</h4>
       {cardList.length ? (
         cardList.map((card) => {
-          return <TCard key={card.id} card={card} />;
+          return <Answer key={card.id} card={card} />;
         })
       ) : (
         <div>カードなし</div>

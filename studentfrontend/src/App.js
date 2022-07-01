@@ -19,49 +19,39 @@ import { useState } from 'react';
 import { Button } from "@mui/material";
 import { Icon } from "@mui/material";
 import Home from "./components/Home";
+import Answer from "./components/Answer";
+
 
 export const TaskCardsContext = React.createContext();
 export const QuestionContext = React.createContext();
+export const AnswerContext = React.createContext();
 
 const questionList = [
   { id: 1,  question: "議事録の取り方がわかりません"  },
-  { id: 2,  question: "Slackの使い方を教えて" },
-  { id: 3,  question: "会社の位置がわかりません" },
 ]
 
-const LoginButton = () => {
-  const navigate = useNavigate();
-  const Register = () => {
-    navigate('/Register');
-  };
-  return (
-    <Button onClick={Register} color="inherit" variant="contained">
-      質問を追加
-    </Button>
-  );
-};
+const answerList = [
+]
 
 
 function App() {
   const [questions,setQuestions] = useState(questionList);
+  const [answers,setAnswers] = useState(questionList);
   const count = useSelector((state) => state.count);
 
   return (
-    <QuestionContext.Provider value = {[questions,setQuestions]}>
-      <TaskCardsContext.Provider value={useTaskCardsState(taskCards)}>
-        <BrowserRouter>
-          <div className="App">
-            <Appbar/>
-            <h1>質問数: {questions.length}</h1>
-            <LoginButton />
-          </div>
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route path="/Register" element={<Register />} />
-          </Routes>
-        </BrowserRouter>
-      </TaskCardsContext.Provider>
-    </QuestionContext.Provider>
+    <AnswerContext.Provider value = { [answers,setAnswers]}>
+      <QuestionContext.Provider value = {[questions,setQuestions]}>
+        <TaskCardsContext.Provider value={useTaskCardsState(taskCards)}>
+          <BrowserRouter>
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route path="/Register" element={<Register />} />
+            </Routes>
+          </BrowserRouter>
+        </TaskCardsContext.Provider>
+      </QuestionContext.Provider>
+    </AnswerContext.Provider>
   );
 }
 

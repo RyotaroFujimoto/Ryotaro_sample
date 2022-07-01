@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from "react";
-import { blue } from '@mui/material/colors';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
@@ -10,6 +9,8 @@ import Typography from '@mui/material/Typography';
 import Icon from '@mui/material/Icon';
 import { styled } from '@mui/system';
 import { QuestionContext } from '../App';
+import { AppBar } from '@mui/material';
+
 
 const StyledPaper = styled(Paper)({
     width: '400px',
@@ -19,6 +20,7 @@ const StyledPaper = styled(Paper)({
     padding: '200px',
     marginRight: 'auto',
     marginLeft: 'auto',
+    marginTop: '100px',
   });
   
 const StyledAvatar = styled(Avatar)({
@@ -28,6 +30,7 @@ backgroundColor: '#EE0290',
 const StyledButton = styled(Button)({
 margin: '5px',
 });
+
 
 const Register = () => {
     const [questions,setQuestions] = useContext(QuestionContext);
@@ -47,28 +50,27 @@ const Register = () => {
     const handleReturnClick = () => {
     navigate('/');
     }
+
   return(
-    <div>
-     <StyledPaper>
-      <StyledAvatar>
-        <Icon>work</Icon>
-      </StyledAvatar>
-      <Typography component="h1" variant="h5">
-        質問の登録
-      </Typography>
-      <form className="question_entry-form" noValidate>
-        <TextField variant="outlined" margin="normal" id="question" label="質問内容" name = "question" onChange={handleQuestionChange} />
-        <div className="question_entry-buttons">
-          <StyledButton variant="outlined" color="primary" onClick={handleReturnClick}>
-            キャンセル
-          </StyledButton>
-          <StyledButton variant="contained" color="primary" onClick={handleAddClick}>
-            登録
-          </StyledButton>
-        </div>
-      </form>
-     </StyledPaper>
-    </div>
+    <body className='register'>
+      <AppBar/>
+      <StyledPaper>
+        <Typography component="h1" variant="h5">
+          質問の登録
+        </Typography>
+        <form className="question_entry-form" noValidate>
+          <TextField variant="outlined" margin="normal" id="question" label="質問内容" name = "question" onChange={handleQuestionChange} />
+          <div className="question_entry-buttons">
+            <StyledButton variant="outlined" color="primary" onClick={handleReturnClick}>
+              キャンセル
+            </StyledButton>
+            <StyledButton variant="contained" color="primary" onClick={handleAddClick}>
+              登録
+            </StyledButton>
+          </div>
+        </form>
+      </StyledPaper>
+    </body>
   )
 }
 

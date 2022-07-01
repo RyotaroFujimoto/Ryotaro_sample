@@ -20,7 +20,6 @@ export default function Appbar() {
           </Typography>
           <div style={{ flexGrow: 1 }}></div>
           <Button color="inherit">ログイン</Button>
-          
         </Toolbar>
       </AppBar>
     </Box>
