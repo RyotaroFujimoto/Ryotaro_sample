@@ -1,46 +1,20 @@
 import React from 'react';
-import { useContext } from "react";
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Paper from '@mui/material/Paper';
-import TextField from '@mui/material/TextField';
+import Card from '@mui/material/Card';
 import { styled } from '@mui/system';
-import { AnswerContext } from '../App';
+import "./Answer.css";
 
-  
-const StyledAvatar = styled(Avatar)({
-backgroundColor: '#EE0290',
-});
+const StyledCard = styled(Card)({
+    marginBottom: 10,
+    marginTop:100,
+    width: 'auto',
+  });
 
-const StyledButton = styled(Button)({
-margin: '5px',
-});
+  //answersを取り出す
 
-const Answer = () => {
-    const [answers,setAnswers] = useContext(AnswerContext);
-    const newAnswer = {id:0,answer:''}
-    const handleAnswerChange = (event) => {
-        newAnswer.answer = event.target.value;
-    }
-    const handleAddClick = () => {
-        // 新しいIDを取得
-        newAnswer.id = answers.length + 1;
-        //質問追加
-        setAnswers([...answers, newAnswer]);
-    }
-
-  return(
-    <div>
-      <form className="answer_entry-form" noValidate>
-        <TextField variant="filled" margin="normal" id="answer" label="回答" name = "answer" onChange={handleAnswerChange}  />
-        <div className="answer_entry-buttons">
-          <StyledButton variant="contained" color="primary" onClick={handleAddClick}>
-           投稿する
-          </StyledButton>
-        </div>
-      </form>
-    </div>
-  )
+const Answer = () =>{
+    return(
+        <div class="balloon1-right">hello</div>
+    )
 }
 
 export default Answer;

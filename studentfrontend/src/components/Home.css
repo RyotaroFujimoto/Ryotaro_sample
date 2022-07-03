@@ -1,0 +1,9 @@
+.Text{
+    text-align: center;
+}
+.Button{
+    position: fixed; /* 要素の位置を固定する */
+    bottom: 0; /* 基準の位置を画面の一番下に指定する */
+    right: 0; /* 基準の位置を画面の一番右に指定する */
+    width: 300px; /* 幅を指定する */
+}

@@ -1,12 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from "react";
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import Icon from '@mui/material/Icon';
 import { styled } from '@mui/system';
 import { QuestionContext } from '../App';
 import { AppBar } from '@mui/material';
@@ -21,14 +19,9 @@ const StyledPaper = styled(Paper)({
     padding: '421px',
   });
   
-const StyledAvatar = styled(Avatar)({
-backgroundColor: '#EE0290',
-});
-
 const StyledButton = styled(Button)({
 margin: '5px',
 });
-
 
 const Register = () => {
     const [questions,setQuestions] = useContext(QuestionContext);
@@ -51,7 +44,7 @@ const Register = () => {
 
   return(
     <div>
-      <AppBar/>
+      <AppBar />
       <StyledPaper>
         <Typography component="h1" variant="h5">
           質問の登録
