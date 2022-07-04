@@ -32,7 +32,7 @@ const Home = () =>{
           <h1 class="Text">質問数: {questions.length}</h1>
           <StyledBox>
           {questions.map((value, id) => {
-            return <StickyNote title = {value.question} id = {id}/>
+            return <StickyNote title = {value.question} id = {value.id}/>
           })}
           </StyledBox>
           <div class="Button"><ToRegisterButton /></div>
