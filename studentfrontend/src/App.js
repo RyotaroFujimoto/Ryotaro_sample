@@ -8,6 +8,7 @@ import Register from "./components/Register";
 import { useState } from 'react';
 import Home from "./components/Home";
 import Guide from "./components/Guide";
+import SolvedAnswer from "./components/SolvedAnswer";
 
 
 export const QuestionContext = React.createContext();
@@ -21,6 +22,7 @@ const answerList = [[
 ]
 ];
 
+console.log(answerList);
 
 function App() {
   const [questions,setQuestions] = useState(questionList);
@@ -34,6 +36,7 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route path="/Register" element={<Register />} />
             <Route path="/Guide" element={<Guide />} />
+            <Route path="/SolvedAnswer" element={<SolvedAnswer />} />
           </Routes>
         </BrowserRouter>
       </QuestionContext.Provider>

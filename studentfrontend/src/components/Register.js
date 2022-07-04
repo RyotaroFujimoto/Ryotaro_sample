@@ -9,15 +9,16 @@ import { styled } from '@mui/system';
 import { QuestionContext } from '../App';
 import { AppBar } from '@mui/material';
 import { AnswerContext } from '../App';
+import { CenterFocusStrong } from '@mui/icons-material';
 
 const StyledPaper = styled(Paper)({
-    width: 'auto',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    height: '100%',
-    padding: '421px',
-  });
+  width: '300px',
+  height: '200px',
+  margin: 'auto',
+  padding: '10px',
+  marginTop: '400px',
+  textAlign: 'center',
+});
   
 const StyledButton = styled(Button)({
 margin: '5px',
@@ -28,16 +29,13 @@ const Register = () => {
     const navigate = useNavigate();
     const [answers,setAnswers] = useContext(AnswerContext);
     const newQuestion = {id:0,question:''};
-    const newAnswer =  
-    {
-    }
-
+    const newAnswer =  {id:0,answer:''};
     const handleQuestionChange = (event) => {
         newQuestion.question = event.target.value;
     };
     const handleAddClick = () => {
         newQuestion.id = questions.length + 1;
-        newAnswer.categoryId = questions.length + 1
+        newAnswer.questionId = questions.length + 1
         setQuestions([...questions, newQuestion]);
         setAnswers([...answers,[newAnswer]])
         navigate('/');
@@ -50,7 +48,7 @@ const Register = () => {
     <div>
       <AppBar />
       <StyledPaper>
-        <Typography component="h1" variant="h5">
+        <Typography component="h1" variant="h5" margin='15px'>
           質問の登録
         </Typography>
         <form className="question_entry-form" noValidate>

@@ -10,6 +10,7 @@ import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import AddIcon from '@mui/icons-material/Add';
+import SolvedAnswer from "./SolvedAnswer";
 
 const StyledBox = styled (Box)({
     display:'flex',
@@ -44,8 +45,12 @@ const QuestionButtom = () => {
 }
 
 const BackButtom = () => {
+  const navigate = useNavigate();
+  const SolvedAnswer = () => {
+    navigate('/SolvedAnswer');
+  };
   return (
-    <ArrowBackIcon sx={{ fontSize: 150 }} color="inherit" variant="contained"/>
+    <ArrowBackIcon sx={{ fontSize: 150 }} color="inherit" variant="contained" onClick={SolvedAnswer}/>
   );
 };
 
@@ -56,7 +61,7 @@ const Home = () =>{
           {/* <h1 class="Text">質問数: {questions.length}</h1> */}
           <StyledBox>
           {questions.map((value, idx) => {
-            return <StickyNote title = {value.question} categoryId = {value.id} key = {idx}/>
+            return <StickyNote title = {value.question} questionId = {value.id} key = {idx}/>
           })}
           </StyledBox>
           <div class="reg-Buttom"><ToRegisterButton /></div>

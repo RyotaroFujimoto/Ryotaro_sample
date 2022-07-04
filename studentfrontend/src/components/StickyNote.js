@@ -26,7 +26,7 @@ const StyledPaper = styled(Paper)({
 export const StickyNote = (props) => {
   // カスタムフックで定義した状態をコンテキストを通じて取得
   const [ state ] = useContext(AnswerContext);
-  const answerObj = state[props.categoryId]
+  const answerObj = state[props.questionId]
   const [answerList, setAnswersList] = useState(answerObj)
  
   return (
@@ -36,11 +36,8 @@ export const StickyNote = (props) => {
         <img src='https://frame-illust.com/fi/wp-content/uploads/2015/01/6ebb4091a951c8bd25ba696145f68148.png'></img>
         <h3>{props.title}</h3>
       </div>
-      <div>
-        <Answer />
-      </div>
       <div class="center">
-        <AnswerForm categoryId = {props.categoryId}/>
+        <AnswerForm questionId = {props.questionId}/>
       </div>
     </StyledPaper>
     </AnswersListContext.Provider>
