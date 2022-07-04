@@ -7,6 +7,7 @@ import {
 import Register from "./components/Register";
 import { useState } from 'react';
 import Home from "./components/Home";
+import Guide from "./components/Guide";
 
 
 export const QuestionContext = React.createContext();
@@ -15,8 +16,10 @@ export const AnswerContext = React.createContext();
 const questionList = [
 ]
 
-const answerList = [
+const answerList = [[
+
 ]
+];
 
 
 function App() {
@@ -30,6 +33,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/Register" element={<Register />} />
+            <Route path="/Guide" element={<Guide />} />
           </Routes>
         </BrowserRouter>
       </QuestionContext.Provider>

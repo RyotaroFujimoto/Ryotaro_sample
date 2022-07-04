@@ -5,8 +5,11 @@ import { Box } from "@mui/system";
 import { QuestionContext } from "../App";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import AddCircleIcon from '@mui/icons-material/AddCircle';
 import "./Home.css";
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import FilterAltIcon from '@mui/icons-material/FilterAlt';
+import AddIcon from '@mui/icons-material/Add';
 
 const StyledBox = styled (Box)({
     display:'flex',
@@ -20,22 +23,46 @@ const ToRegisterButton = () => {
       navigate('/Register');
     };
     return (
-      <AddCircleIcon sx={{ fontSize: 100 }} onClick={Register} color="inherit" variant="contained"/>
+      <AddIcon sx={{ fontSize: 150 }} onClick={Register} color="inherit" variant="contained"/>
     );
   };
   
+const SearchButtom = () => {
+  return (
+    <FilterAltIcon sx={{ fontSize: 150 }} color="inherit" variant="contained"/>
+  );
+};
+
+const QuestionButtom = () => {
+  const navigate = useNavigate();
+  const Guide = () => {
+    navigate('/Guide');
+  };
+  return (
+    <QuestionMarkIcon  sx={{ fontSize: 150 }} color="inherit" variant="contained" onClick={Guide}/>
+  )
+}
+
+const BackButtom = () => {
+  return (
+    <ArrowBackIcon sx={{ fontSize: 150 }} color="inherit" variant="contained"/>
+  );
+};
 
 const Home = () =>{
     const [questions,setQuestions] = useContext(QuestionContext);
     return (
         <div>
-          <h1 class="Text">質問数: {questions.length}</h1>
+          {/* <h1 class="Text">質問数: {questions.length}</h1> */}
           <StyledBox>
-          {questions.map((value, id) => {
-            return <StickyNote title = {value.question} id = {value.id}/>
+          {questions.map((value, idx) => {
+            return <StickyNote title = {value.question} categoryId = {value.id} key = {idx}/>
           })}
           </StyledBox>
-          <div class="Button"><ToRegisterButton /></div>
+          <div class="reg-Buttom"><ToRegisterButton /></div>
+          <div class="ser-Buttom"><SearchButtom /></div>
+          <div class="que-Buttom"><QuestionButtom /></div>
+          <div class="bac-Buttom"><BackButtom /></div>
         </div>
     )
 }

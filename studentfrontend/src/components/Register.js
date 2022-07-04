@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import { styled } from '@mui/system';
 import { QuestionContext } from '../App';
 import { AppBar } from '@mui/material';
-
+import { AnswerContext } from '../App';
 
 const StyledPaper = styled(Paper)({
     width: 'auto',
@@ -26,21 +26,25 @@ margin: '5px',
 const Register = () => {
     const [questions,setQuestions] = useContext(QuestionContext);
     const navigate = useNavigate();
-    const newQuestion = {id:0,question:''}
+    const [answers,setAnswers] = useContext(AnswerContext);
+    const newQuestion = {id:0,question:''};
+    const newAnswer =  
+    {
+    }
+
     const handleQuestionChange = (event) => {
         newQuestion.question = event.target.value;
-    }
+    };
     const handleAddClick = () => {
-        // 新しいIDを取得
         newQuestion.id = questions.length + 1;
-        //質問追加
+        newAnswer.categoryId = questions.length + 1
         setQuestions([...questions, newQuestion]);
-        // 質問一覧へ遷移
+        setAnswers([...answers,[newAnswer]])
         navigate('/');
-    }
+    };
     const handleReturnClick = () => {
     navigate('/');
-    }
+    };
 
   return(
     <div>

@@ -1,9 +1,41 @@
 .Text{
     text-align: center;
 }
-.Button{
+
+.Qnum{
+    text-align: right;
+}
+
+.reg-Buttom{
     position: fixed; /* 要素の位置を固定する */
     bottom: 0; /* 基準の位置を画面の一番下に指定する */
     right: 0; /* 基準の位置を画面の一番右に指定する */
     width: 300px; /* 幅を指定する */
+    text-align: right;
+    cursor: pointer;
+
+}
+
+.ser-Buttom{
+    position: fixed; /* 要素の位置を固定する */
+    bottom: 0; /* 基準の位置を画面の一番下に指定する */
+    right: 0; /* 基準の位置を画面の一番右に指定する */
+    margin-right: 160px;
+    cursor: pointer;
+}
+
+.que-Buttom{
+    position: fixed; /* 要素の位置を固定する */
+    bottom: 0; /* 基準の位置を画面の一番下に指定する */
+    right: 0; /* 基準の位置を画面の一番右に指定する */
+    margin-right: 480px;
+    cursor: pointer;
+}
+
+.bac-Buttom{
+    position: fixed; /* 要素の位置を固定する */
+    bottom: 0; /* 基準の位置を画面の一番下に指定する */
+    right: 0; /* 基準の位置を画面の一番右に指定する */
+    margin-right: 320px;
+    cursor: pointer;
 }

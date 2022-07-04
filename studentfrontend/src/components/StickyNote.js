@@ -3,8 +3,13 @@ import { styled } from '@mui/system';
 import AnswerForm from './AnswerForm';
 import Answer from './Answer';
 import "./StickyNote.css";
-// import { TaskCardsContext} from '../App';
-// import { AnswerContext } from '../App';
+import { AnswerContext } from '../App';
+import { useState } from 'react';
+import { ContentCopy } from '@mui/icons-material';
+import React from 'react';
+import { useContext } from 'react';
+
+export const AnswersListContext = React.createContext();
 
 const StyledPaper = styled(Paper)({
   backgroundColor: "LightPink",
@@ -13,28 +18,31 @@ const StyledPaper = styled(Paper)({
   padding: 8,
   marginRight: 130,
   marginLeft: 130,
-  marginTop: 100,
-  marginBottom: 100,
+  marginTop: 50,
+  marginBottom: 170,
 });
 
 // TListコンポーネント
 export const StickyNote = (props) => {
   // カスタムフックで定義した状態をコンテキストを通じて取得
-  // const { state } = useContext(TaskCardsContext);
-  // const [answers,setAnswers] = useContext(AnswerContext);
+  const [ state ] = useContext(AnswerContext);
+  const answerObj = state[props.categoryId]
+  const [answerList, setAnswersList] = useState(answerObj)
  
   return (
+    <AnswersListContext.Provider value={[answerList, setAnswersList]}>
     <StyledPaper>
       <div class="center">
         <img src='https://frame-illust.com/fi/wp-content/uploads/2015/01/6ebb4091a951c8bd25ba696145f68148.png'></img>
-        <h1>{props.id} : {props.title}</h1>
+        <h3>{props.title}</h3>
       </div>
       <div>
         <Answer />
       </div>
       <div class="center">
-        <AnswerForm />
+        <AnswerForm categoryId = {props.categoryId}/>
       </div>
     </StyledPaper>
+    </AnswersListContext.Provider>
   );
 };
