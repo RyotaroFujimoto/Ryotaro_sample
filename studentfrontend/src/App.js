@@ -7,10 +7,12 @@ import {
 import Register from "./components/Register";
 import { useState } from 'react';
 import Home from "./components/UnsolvedQuestion";
-import Guide from "./components/Guide";
-import SolvedAnswer from "./components/SolvedQuestion";
+import GuideInUnsolved from "./components/GuideInUnsolved";
+import SolvedQuestion from "./components/SolvedQuestion";
 import UnsolvedQuestion from "./components/UnsolvedQuestion";
 import { Login } from "./components/Login";
+import GuideInSolved from "./components/GuideInSolved";
+import MyPage from "./components/MyPage";
 
 
 
@@ -36,11 +38,14 @@ function App() {
       <QuestionContext.Provider value = {[questions,setQuestions]}>
         <BrowserRouter>
           <Routes>
-            <Route exact path="/" element={<SolvedAnswer />} />
+            <Route exact path="/" element={<SolvedQuestion />} />
             <Route path="/Register" element={<Register />} />
-            <Route path="/Guide" element={<Guide />} />
+            <Route path="/GuideInSolved" element={<GuideInSolved />} />
             <Route path="/UnsolvedQuestion" element={<UnsolvedQuestion />} />
             <Route path="/Login" element={<Login/>} />
+            <Route path="/SolvedQuestion" element={<SolvedQuestion />} />
+            <Route path="/GuideInUnsolved" element={<GuideInUnsolved/>} />
+            <Route path="/MyPage" element={<MyPage/>} />
           </Routes>
         </BrowserRouter>
       </QuestionContext.Provider>

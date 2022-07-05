@@ -13,7 +13,19 @@ import {
   } from "@mui/material";
   import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
   import { teal } from "@mui/material/colors";
+  import styled from "@emotion/styled";
+  import { useNavigate } from "react-router-dom";
+
+  const StyledButton = styled(Button)({
+    margin: '5px',
+    });
+
   export const Login = () => {
+    const navigate = useNavigate();
+    const handleReturnClick = () => {
+      navigate('/');
+      };
+    
     return (
       <Grid>
         <Paper
@@ -52,11 +64,13 @@ import {
             label="パスワードを忘れました"
             control={<Checkbox name="checkboxA" size="small" color="primary" />}
           />
-          <Box mt={3}>
-            <Button type="submit" color="primary" variant="contained" fullWidth>
+          <Box mt={3}>            
+            <StyledButton type="submit" color="primary" variant="contained" fullWidth>
               サインイン
-            </Button>
-  
+            </StyledButton>   
+            <StyledButton onClick={handleReturnClick} type="submit" color="primary" variant="outlined" fullWidth>
+              キャンセル
+            </StyledButton>
             <Typography variant="caption">
               <Link href="#">パスワードを忘れましたか？</Link>
             </Typography>

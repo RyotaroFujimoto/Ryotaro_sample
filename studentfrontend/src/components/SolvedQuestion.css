@@ -1,12 +1,4 @@
-.Text{
-text-align: center;
-}
-
-.Qnum{
-text-align: right;
-}
-
-.reg_text {
+.log_text {
 position: fixed; /* 要素の位置を固定する */
 bottom: 0; /* 基準の位置を画面の一番下に指定する */
 right: 0; /* 基準の位置を画面の一番右に指定する */
@@ -14,12 +6,11 @@ text-align: right;
 cursor: pointer;
 }
 
-.reg_fukidasi {
+.log_fukidasi {
 display: none;
-width: 200px;
-position: absolute;
-top: 0;
-left: 250px;
+width: 120px;
+position: fixed;
+right: 0;
 padding: 16px;
 border-radius: 5px;
 background: #33cc99;
@@ -27,7 +18,7 @@ color: #fff;
 font-weight: bold;
 }
 
-.reg_fukidasi:after {
+.log_fukidasi:after {
 position: absolute;
 width: 0;
 height: 0;
@@ -42,64 +33,24 @@ pointer-events: none;
 content: " ";
 }
 
-.reg_text:hover + .reg_fukidasi {
+.log_text:hover + .log_fukidasi {
 display: block;
 }
 
-.ser_text {
+.que_text {
 position: fixed; /* 要素の位置を固定する */
 bottom: 0; /* 基準の位置を画面の一番下に指定する */
 right: 0; /* 基準の位置を画面の一番右に指定する */
 margin-right: 150px;
 cursor: pointer;
 }
-
-.ser_fukidasi {
+    
+.que_fukidasi {
 display: none;
 width: 200px;
-position: absolute;
-top: 0;
-left: 250px;
-padding: 16px;
-border-radius: 5px;
-background: #33cc99;
-color: #fff;
-font-weight: bold;
-}
-
-.ser_fukidasi:after {
-position: absolute;
-width: 0;
-height: 0;
-left: 0;
-bottom: -19px;
-margin-left: 10px;
-border: solid transparent;
-border-color: rgba(51, 204, 153, 0);
-border-top-color: #33cc99;
-border-width: 10px;
-pointer-events: none;
-content: " ";
-}
-
-.ser_text:hover + .ser_fukidasi {
-display: block;
-}
-
-.bac_text {
-position: fixed; /* 要素の位置を固定する */
-bottom: 0; /* 基準の位置を画面の一番下に指定する */
+position: fixed;
 right: 0; /* 基準の位置を画面の一番右に指定する */
-margin-right: 320px;
-cursor: pointer;
-}
-
-.bac_fukidasi {
-display: none;
-width: 200px;
-position: absolute;
-top: 0;
-left: 250px;
+margin-right: 150px;
 padding: 16px;
 border-radius: 5px;
 background: #33cc99;
@@ -107,7 +58,7 @@ color: #fff;
 font-weight: bold;
 }
 
-.bac_fukidasi:after {
+.que_fukidasi:after {
 position: absolute;
 width: 0;
 height: 0;
@@ -122,7 +73,14 @@ pointer-events: none;
 content: " ";
 }
 
-.bac_text:hover + .bac_fukidasi {
+.que_text:hover + .que_fukidasi {
 display: block;
 }
+
+.Text{
+    text-align: center;
+}
+
+
+
 
