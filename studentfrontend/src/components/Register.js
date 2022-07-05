@@ -38,10 +38,10 @@ const Register = () => {
         newAnswer.questionId = questions.length + 1
         setQuestions([...questions, newQuestion]);
         setAnswers([...answers,[newAnswer]])
-        navigate('/');
+        navigate('/UnsolvedQuestion');
     };
     const handleReturnClick = () => {
-    navigate('/');
+    navigate('/UnsolvedQuestion');
     };
 
   return(

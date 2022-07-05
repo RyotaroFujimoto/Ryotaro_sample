@@ -22,7 +22,7 @@ margin: '5px',
 const Guide = () => {
     const navigate = useNavigate();
     const handleReturnClick = () => {
-        navigate('/');
+        navigate('/UnsolvedQuestion');
         }    
   return(
     <div>

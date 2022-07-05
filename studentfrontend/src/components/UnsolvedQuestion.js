@@ -5,12 +5,11 @@ import { Box } from "@mui/system";
 import { QuestionContext } from "../App";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Home.css";
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import AddIcon from '@mui/icons-material/Add';
-import SolvedAnswer from "./SolvedAnswer";
+import "./UnsolvedQuestion.css";
 
 const StyledBox = styled (Box)({
     display:'flex',
@@ -47,14 +46,14 @@ const QuestionButtom = () => {
 const BackButtom = () => {
   const navigate = useNavigate();
   const SolvedAnswer = () => {
-    navigate('/SolvedAnswer');
+    navigate('/');
   };
   return (
     <ArrowBackIcon sx={{ fontSize: 150 }} color="inherit" variant="contained" onClick={SolvedAnswer}/>
   );
 };
 
-const Home = () =>{
+const UnsolvedQuestion = () =>{
     const [questions,setQuestions] = useContext(QuestionContext);
     return (
         <div>
@@ -72,4 +71,4 @@ const Home = () =>{
     )
 }
 
-export default Home;
+export default UnsolvedQuestion;

@@ -38,7 +38,9 @@ const AnswerForm = (props) => {
         if(id > 0){
         return (
           <Answer key={answer.questionId} Answer={answer.answer}/>
-          )}
+          )} else{
+            return (<div></div>)
+          }
       })}
       <form action="sample-form.php" method="post" target="_blank">
         <TextField variant="filled" margin="normal" id="answer" label="回答" name = "answer" onChange={handleAnswerChange}  />

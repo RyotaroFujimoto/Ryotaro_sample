@@ -6,9 +6,12 @@ import {
 } from 'react-router-dom';
 import Register from "./components/Register";
 import { useState } from 'react';
-import Home from "./components/Home";
+import Home from "./components/UnsolvedQuestion";
 import Guide from "./components/Guide";
-import SolvedAnswer from "./components/SolvedAnswer";
+import SolvedAnswer from "./components/SolvedQuestion";
+import UnsolvedQuestion from "./components/UnsolvedQuestion";
+import { Login } from "./components/Login";
+
 
 
 export const QuestionContext = React.createContext();
@@ -33,10 +36,11 @@ function App() {
       <QuestionContext.Provider value = {[questions,setQuestions]}>
         <BrowserRouter>
           <Routes>
-            <Route exact path="/" element={<Home />} />
+            <Route exact path="/" element={<SolvedAnswer />} />
             <Route path="/Register" element={<Register />} />
             <Route path="/Guide" element={<Guide />} />
-            <Route path="/SolvedAnswer" element={<SolvedAnswer />} />
+            <Route path="/UnsolvedQuestion" element={<UnsolvedQuestion />} />
+            <Route path="/Login" element={<Login/>} />
           </Routes>
         </BrowserRouter>
       </QuestionContext.Provider>
