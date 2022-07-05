@@ -38,19 +38,13 @@ const QuestionButtom = () => {
 
 const SolvedAnswer = () =>{
     return(
-          <div>
-            <h1 class= 'Text'>SolvedQuestion</h1>
-            {/* <div class="css-fukidashi">            
-              <span title="UnsolvedQuestionに移動" class='ans_Buttom'><ToAnswerButtom /></span>
-              <span title="マイページに移動" class='log_Buttom'><ToMypageButtom /></span>
-              <span title="" class="que_Buttom"><QuestionButtom /></span>
-            </div> */}
-              <p class="log_text"><ToMypageButtom /></p>
-              <p class="log_fukidasi">ログイン画面へ</p>
-              <p class="que_text"><ToAnswerButtom /></p>
-              <p class="que_fukidasi">UnsolvedQuestion画面へ</p>
-
-          </div>
+      <body class='a'>
+        <h1 class= 'Text'>SolvedQuestion</h1>
+          <p class="log_text"><ToMypageButtom /></p>
+          <p class="log_fukidasi">ログイン画面へ</p>
+          <p class="que_text"><ToAnswerButtom /></p>
+          <p class="que_fukidasi">UnsolvedQuestion画面へ</p>
+      </body>
     )
 }
 

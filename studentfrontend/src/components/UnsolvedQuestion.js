@@ -56,7 +56,7 @@ const BackButtom = () => {
 const UnsolvedQuestion = () =>{
     const [questions,setQuestions] = useContext(QuestionContext);
     return (
-        <div>
+        <body class='b'>
           {/* <h1 class="Text">質問数: {questions.length}</h1> */}
           <h1 class="Text">UnsolvedQuestion</h1>
           <StyledBox>
@@ -70,7 +70,7 @@ const UnsolvedQuestion = () =>{
           <p class="ser_fukidasi">絞り込み</p>
           <p class="bac_text"><BackButtom /></p>
           <p class="bac_fukidasi">SolvedQuestion画面へ</p>
-        </div>
+        </body>
     )
 }
 
