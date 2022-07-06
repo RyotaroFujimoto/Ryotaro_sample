@@ -56,9 +56,9 @@ const BackButtom = () => {
 const UnsolvedQuestion = () =>{
     const [questions,setQuestions] = useContext(QuestionContext);
     return (
-        <body class='b'>
+        <body>
           {/* <h1 class="Text">質問数: {questions.length}</h1> */}
-          <h1 class="Text">UnsolvedQuestion</h1>
+          {/* <h1 class="Text">UnsolvedQuestion</h1> */}
           <StyledBox>
           {questions.map((value, idx) => {
             return <StickyNote title = {value.question} questionId = {value.id} key = {idx}/>

@@ -85,11 +85,11 @@ display: block;
 
 .Text{
     text-align: center;
+    margin: 0;
 }
 
-.a{
+.backgroud{
     width: 100vw;
     height: 100vh;
     background-color: #fff;
 }
-

@@ -26,6 +26,7 @@ font-weight: bold;
 text-align: center;
 bottom: 0;
 margin-bottom: 170px;
+margin-right: 20px;
 }
 
 .reg_fukidasi:after {
@@ -34,7 +35,7 @@ width: 0;
 height: 0;
 left: 0;
 bottom: -19px;
-margin-left: 140px;
+margin-left: 165px;
 border: solid transparent;
 border-color: rgba(51, 204, 153, 0);
 border-top-color: #33cc99;
@@ -133,9 +134,3 @@ content: " ";
 display: block;
 }
 
-.b{
-    width: 100vw;
-    height: 100vh;
-    background-image: url(https://free-paper-texture.com/p/p0142/p0142_m.jpg);
-
-}

@@ -6,13 +6,13 @@ import {
 } from 'react-router-dom';
 import Register from "./components/Register";
 import { useState } from 'react';
-import Home from "./components/UnsolvedQuestion";
 import GuideInUnsolved from "./components/GuideInUnsolved";
 import SolvedQuestion from "./components/SolvedQuestion";
 import UnsolvedQuestion from "./components/UnsolvedQuestion";
 import { Login } from "./components/Login";
 import GuideInSolved from "./components/GuideInSolved";
 import MyPage from "./components/MyPage";
+import { useEffect } from "react";
 
 
 
@@ -23,18 +23,35 @@ const questionList = [
 ]
 
 const answerList = [[
-
 ]
 ];
 
-console.log(answerList);
-
 function App() {
   const [questions,setQuestions] = useState(questionList);
-  const [answers,setAnswers] = useState(answerList);
-
+  useEffect(() => {
+    // WebAPIよりデータをGETする。
+    const fetchData = async () => {
+      try {
+        // WebAPIにアクセスしてレスポンスを得る
+        const response = await window.fetch('http://localhost:8080/spring-boot-aks/question/findall',{
+          headers: {
+          'Content-Type': 'application/json',
+        }});
+        // ステータスが200(ok)以外のときはエラー扱いとする
+        if (!response.ok) throw new Error(`Fetch Error ... ${response.status}`);
+        // レスポンスのボディ部分をJSONで取得
+        const body = await response.json();
+        // 状態に保存
+        setQuestions(body);
+      } catch (error) {
+        // 通信エラー時処理
+        console.error(error);
+      }
+    };
+    // このコンポーネントの初回マウント時にWebAPIからデータを得る
+    fetchData();
+  }, []); // ← 依存プロパティを空にして初回マウント時のみ動作
   return (
-    <AnswerContext.Provider value = { [answers,setAnswers]}>
       <QuestionContext.Provider value = {[questions,setQuestions]}>
         <BrowserRouter>
           <Routes>
@@ -49,7 +66,6 @@ function App() {
           </Routes>
         </BrowserRouter>
       </QuestionContext.Provider>
-    </AnswerContext.Provider>
   );
 }
 
